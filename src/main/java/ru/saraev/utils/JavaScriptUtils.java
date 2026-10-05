@@ -8,6 +8,6 @@ public class JavaScriptUtils {
 
     public static void setValue(String value, SelenideElement element) {
         JavascriptExecutor js = (JavascriptExecutor) WebDriverRunner.getWebDriver();
-        js.executeScript("arguments[0].value='%s';".formatted(value), element);
+        js.executeScript(String.format("arguments[0].value='%s';", value), element);
     }
 }

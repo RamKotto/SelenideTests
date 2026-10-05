@@ -12,4 +12,8 @@ public class SearchResultPage extends MainPage {
     public String getHrefFirstTitle() {
         return titles.shouldHave(size(10)).first().getAttribute("href");
     }
+
+    public ElementsCollection getTitles() {
+        return titles;
+    }
 }
