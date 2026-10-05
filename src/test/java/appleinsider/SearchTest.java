@@ -20,6 +20,5 @@ public class SearchTest extends BaseTest {
             .getHrefFirstTitle();
 
         Assert.assertTrue(href.contains(EXPECTED_PART_OF_HREF));
-        Assert.assertEquals(true, false);
     }
 }

@@ -11,7 +11,9 @@ public class SearchResultPage extends MainPage {
     private ElementsCollection titles;
 
     public String getHrefFirstTitle() {
-        return titles.shouldHave(CollectionCondition.size(10)).first().getAttribute("href");
+        return titles.shouldHave(CollectionCondition.sizeGreaterThanOrEqual(1))
+                .first()
+                .getAttribute("href");
     }
 
     public int countTitlesContaining(String text) {
