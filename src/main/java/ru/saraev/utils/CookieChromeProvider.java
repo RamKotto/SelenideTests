@@ -17,7 +17,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 /**
- * Провайдер Chrome, который до первого перехода на сайт добавляет в браузер куки из browser-cookies.txt.
+ * Провайдер Chrome, который до первого перехода на сайт добавляет в браузер куки из browser-cookies.txt
+ * и разворачивает окно на весь экран.
  * Подключается через Configuration.browser = CookieChromeProvider.class.getName().
  */
 public class CookieChromeProvider implements WebDriverProvider {
@@ -27,7 +28,7 @@ public class CookieChromeProvider implements WebDriverProvider {
     private static final String FIELD_SEPARATOR = "\\|";
 
     /**
-     * Создает Chrome с настройками Selenide и устанавливает в него куки из файла ресурсов.
+     * Создает Chrome с настройками Selenide и устанавливает в него куки из файла ресурсов, затем включает полноэкранный режим.
      *
      * @param capabilities настройки браузера, собранные Selenide
      * @return запущенный драйвер с добавленными куки
@@ -36,6 +37,7 @@ public class CookieChromeProvider implements WebDriverProvider {
     public WebDriver createDriver(Capabilities capabilities) {
         ChromeDriver driver = new ChromeDriver(new ChromeOptions().merge(capabilities));
         readCookies().forEach(cookie -> driver.executeCdpCommand(SET_COOKIE_COMMAND, cookie));
+        driver.manage().window().fullscreen();
         return driver;
     }
 

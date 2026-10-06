@@ -14,7 +14,7 @@ public abstract class BaseTest {
 
     public void setUp() {
         Configuration.browser = CookieChromeProvider.class.getName();
-        Configuration.browserSize = "1920x1000";
+        Configuration.browserSize = null;
         Configuration.headless = false;
         Configuration.timeout = 10000L;
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
