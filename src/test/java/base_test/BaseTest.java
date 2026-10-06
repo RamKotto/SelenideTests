@@ -7,12 +7,13 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeSuite;
+import ru.saraev.utils.CookieChromeProvider;
 import ru.saraev.utils.ScreenshotUtils;
 
 public abstract class BaseTest {
 
     public void setUp() {
-        Configuration.browser = "chrome";
+        Configuration.browser = CookieChromeProvider.class.getName();
         Configuration.browserSize = "1920x1000";
         Configuration.headless = false;
         Configuration.timeout = 10000L;
