@@ -1,10 +1,11 @@
 package appleinsider;
 
-import static com.codeborne.selenide.Selenide.open;
 import base_test.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import ru.saraev.pages.appleinsider.MainPage;
+
+import static com.codeborne.selenide.Selenide.open;
 
 public class SearchTest extends BaseTest {
 
@@ -16,8 +17,8 @@ public class SearchTest extends BaseTest {
     public void checkHrefTest() {
         open(BASE_URL);
         String href = new MainPage()
-            .search(QUERY_STRING)
-            .getHrefFirstTitle();
+                .search(QUERY_STRING)
+                .getHrefFirstTitle();
 
         Assert.assertTrue(href.contains(EXPECTED_PART_OF_HREF));
     }

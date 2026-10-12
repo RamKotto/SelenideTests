@@ -1,10 +1,11 @@
 package appleinsider;
 
-import static com.codeborne.selenide.Selenide.open;
 import base_test.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import ru.saraev.pages.appleinsider.MainPage;
+
+import static com.codeborne.selenide.Selenide.open;
 
 public class SearchTestPhone19 extends BaseTest {
 
